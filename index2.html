@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Contato</title>
+    <link rel="stylesheet" href="css2/styles2.css">
+</head>
+<body id="gradient"> <!--inicio da div principal-->
+    
+</body>
+<div id="main-container">
+
+    <h1>Cadastre o contato:</h1>
+
+    <form id="formulario-de-registro">
+
+        <!--Nome-->
+        <div class="full-box">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome do contato" data-min-length="2" data-nome-validate>
+          </div>
+
+          <!--celular-->
+          <div class="half-box">
+            <label for="celular">Celular</label>
+            <input type="text" name="Celular" id="celular" placeholder="Digite o número de celular" data-required data-max-length="11">
+        </div>
+
+        <!--Telefone-->
+        <div class="half-box">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" id="telefone" placeholder="Digite o número de telefone fixo" data-max-length="10">
+        </div>
+
+        <!--CEP-->
+        <div class="half-box">
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" id="cep" placeholder="Digite o CEP do contato" maxlength="8">
+        </div>
+
+        <!--Endereço-->
+        <div class="full-box">
+            <label for="endereço2">Endereço</label>
+            <input type="text" name="endereço" id="endereço" placeholder="Digite o endereço do contato" maxlength="50">
+        </div>
+
+        <!--CEP-->
+        <div class="full-box">
+            <label for="cep2">CEP Secundário</label>
+            <input type="text" name="cep2" id="cep2" placeholder="Digite o CEP secundário do contato" maxlength="10">
+        </div>
+
+
+        <!--Endereço secundario-->
+        <div class="half-box">
+            <label for="endereço2">Endereço secundario</label>
+            <input type="text" name="endereço2" id="endereço_secundario" placeholder="Digite o endereço secundario" maxlength="50">
+        </div>
+        
+
+        <div class="full-box">
+            <input id="botao" type="submit" value="Cadastrar">
+          </div>
+
+          <p class="error-validation template"></p> <!--div com paragrafo para apresentacao dos erros-->
+
+    </form>
+</div>
+
+<script src="js2/scripts2.js"></script>
+</html>
