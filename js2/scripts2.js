@@ -12,7 +12,7 @@ class validator {
 
   //inicio da valdiacao
   valdiate(form){
-    let teste_de_valdiacao = true
+    let teste_de_validacao = true
 
       // limpa todas as validações antigas
       let currentValidations = document.querySelectorAll('form .error-validation');
@@ -42,7 +42,7 @@ class validator {
   
             // invoca o método
             if( this[method](input,value) == false)
-              teste_de_validacao = false;//modificacao da variavel para false
+              return teste_de_validacao = false;//modificacao da variavel para false
   
           }//fim if
         }//fim for
@@ -63,7 +63,7 @@ class validator {
 
     // imprimir erro só se não tiver erros
     if(errorsQty === null) {
-      //peg o elemento no html error-validation e clona a mensagem dele, agr é um elemento a parte
+      //pega o elemento no html error-validation e clona a mensagem dele, agr é um elemento a parte
       let template = document.querySelector('.error-validation').cloneNode(true);
 
       template.textContent = msg; //template alterado para a mensagem de erro que vio
@@ -91,12 +91,61 @@ class validator {
     return teste_de_validacao //variavel de teste de validacao, liberar acesso caso esteja tudo certo
   }
 
+  maxlength(input, maxValue) {
+    let teste_de_validacao = true //variavel de teste de validacao, liberar acesso caso esteja tudo certo
 
+    let inputLength = input.value.length;
 
+    let errorMessage = `O campo precisa ter menos que ${maxValue} caracteres`;
 
+    if(inputLength > maxValue) {
+      this.printMessage(input, errorMessage);
+      return  false
+    } 
+    return teste_de_validacao //variavel de teste de validacao, liberar acesso caso esteja tudo certo
+  }
+
+  required(input) {
+    let teste_de_validacao = true //variavel de teste de validacao, liberar acesso caso esteja tudo certo
+
+    let inputValue = input.value;
+
+    if(inputValue === '') {
+      let errorMessage = `Este campo é obrigatório`;
+
+      this.printMessage(input, errorMessage);
+      return false
+    }
+    return teste_de_validacao //variavel de teste de validacao, liberar acesso caso esteja tudo certo
+
+  }
 }//fim da classe
 
+//funcao sqlite
+//funcao para sqlite
+//declaracao do banco
+/*
+let db = openDatabase('Agenda', '1.0', 'Agenda de contatos :)', 2* 1024 * 1024);
 
+db.transaction(function(tx){
+  tx.executeSql('CREATE TABLE Agenda ( id INTEGER PRIMARY KEY, nome TEXT, celular INTEGER, telefone INTEGER, cep INTEGER, endereco TEXT, cep2 INTEGER, endereco2 TEEXT');
+});
+
+function salvar(){
+  let nome = document.getElementById('nome')
+  let celular = document.getElementById('celular')
+  let telefone = document.getElementById('telefone')
+  let cep = document.getElementById('cep')
+  let cep2 = document.getElementById('cep2')
+  let endereco = document.getElementById('endereco')
+  let endereco2 = document.getElementById('endereco2')
+
+  db.transaction(function(tx){
+    tx.executeSql('INSERT INTO Agenda (nome, celular, telefone, cep, endereco, cep2, endereco2) VALUES(?,?,?,?,?,?,?)'[nome, celular, telefone, cep, cep2, endereco, endereco2]);
+  });
+}
+*/
+/************************************************************************ */
 let form = document.getElementById('formulario-de-registro')
 let submit = document.getElementById('botao')
 
@@ -105,7 +154,8 @@ let validacao = new validator()
 submit.addEventListener('click', function(a) {
   a.preventDefault(); //nao recarregar a pagina
   if(validacao.valdiate(form) == true){
-    window.location.href = 'http://google.com.br'
+    //salvar()
+    window.location.href = 'google.com'
   }
 })
 
