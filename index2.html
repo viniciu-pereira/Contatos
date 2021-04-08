@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Contato</title>
+    <link rel="stylesheet" href="css2/styles2.css">
+</head>
+<body id="gradient"> <!--inicio da div principal-->
+    
+
+<div id="main-container">
+
+    <h1>Cadastre o contato:</h1>
+
+    <form id="formulario-de-registro" onsubmit="salvar()">
+
+        <!--Nome-->
+        <div class="full-box">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome do contato" data-min-length="2" data-required>
+          </div>
+
+          <!--celular-->
+          <div class="half-box">
+            <label for="celular">Celular</label>
+            <input type="text" name="Celular" id="celular" placeholder="Digite o número de celular" data-required data-max-length="11">
+        </div>
+
+        <!--Telefone-->
+        <div class="half-box">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" id="telefone" placeholder="Digite o número de telefone fixo" data-max-length="10">
+        </div>
+
+        <!--CEP-->
+        <div class="half-box">
+            <label for="cep"><a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" target="_blank">CEP</a></label>
+            <input type="text" name="cep" id="cep" placeholder="Digite o CEP do contato" data-max-length="8">
+        </div>
+
+        <!--Endereço-->
+        <div class="full-box">
+            <label for="endereço2">Endereço</label>
+            <input type="text" name="endereço" id="endereco" placeholder="Digite o endereço do contato" data-max-length="50">
+        </div>
+
+        <!--CEP-->
+        <div class="full-box">
+            <label for="cep2"><a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" target="_blank">CEP secundário</a></label>
+            <input type="text" name="cep2" id="cep2" placeholder="Digite o CEP secundário do contato" data-max-length="8" >
+        </div>
+
+
+        <!--Endereço secundario-->
+        <div class="half-box">
+            <label for="endereço2">Endereço secundario</label>
+            <input type="text" name="endereço2" id="endereco2" placeholder="Digite o endereço secundario" data-max-length="50">
+        </div>
+        
+
+        <div class="full-box">
+            <input id="botao" type="submit" value="Cadastrar">
+        </div>
+
+        
+
+    </form>
+</div>
+<p class="error-validation template"></p> <!--div com paragrafo para apresentacao dos erros-->
+
+<script src="js2/scripts2.js"></script>
+</body>
+</html>
